@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/internal/operators';
+import { catchError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -11,7 +11,12 @@ const apiUrl = 'https://fernando-myflix-3.herokuapp.com/';
   providedIn: 'root'
 })
 
-export class UserRegistrationService {
+export class FetchApiDataService {
+  // Non-typed response extraction
+  private extractResponseData(res: any): any {
+    const body = res;
+    return body || { };
+  }
   // Inject the HttpClient module to the constructor params
  // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) {
@@ -45,14 +50,14 @@ public userLogin(userDetails: any): Observable<any>{
   }
   
   // Making the API call to get a single movie from id
-  getSingleMovie(): Observable<any> {
+  getSingleMovie(_id: any): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + `movies/${_id}`, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' +token,
       }
     )}).pipe(
-      map(this.extractReponseData),
+      map(this.extractResponseData),
       catchError(this.handleError)
     );
   }
@@ -168,11 +173,7 @@ public userLogin(userDetails: any): Observable<any>{
   }
 
 
-  // Non-typed response extraction
-  private extractResponseData(res: Response): any {
-    const body = res;
-    return body || { };
-  }
+  
 
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
