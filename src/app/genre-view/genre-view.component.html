@@ -1,0 +1,18 @@
+<div style="display: flex;">
+  <mat-card>
+      <mat-card-content>
+        <div id="genre" style="width: 1000px; flex: 1 1 auto;" *ngFor="let genres of genres;" >
+          <p id="genreId">{{genres._id}}</p>
+
+        <p id="genreName">{{genres.Name}}</p>
+        <p id="genreDescription">{{genres.Description}}</p>
+        </div>
+        <!-- <div id="genre" style="width: 1000px; flex: 1 1 auto;" *ngFor="let filteredGenres of filteredGenres;" >
+          <p id="genreId">{{filteredGenres._id}}</p>
+
+        <p id="genreName">{{filteredGenres.Name}}</p>
+        <p id="genreDescription">{{filteredGenres.Description}}</p>
+        </div> -->
+      </mat-card-content>
+  </mat-card> 
+</div>

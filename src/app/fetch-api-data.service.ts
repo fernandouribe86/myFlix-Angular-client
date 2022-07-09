@@ -75,17 +75,31 @@ public userLogin(userDetails: any): Observable<any>{
     );
   }
 
-  //Making the api call to get array of genre(s)
-  getGenre(title: any): Observable<any> {
+  //Making the api call to get array of all genre(s)
+  getGenres(): Observable<any> {
     const token = localStorage.getItem('token');
-    return this.http.get(apiUrl + `movies/$_id/Genres`, {
-      headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token
+    return this.http.get(apiUrl + 'genres', { headers: new HttpHeaders(
+      {
+          Authorization: 'Bearer ' + token,
+        })}).pipe(
+        map(this.extractResponseData),
+        catchError(this.handleError)
+      );
+  }
+
+  //Making the api call to get the genres for one movie
+  getSingleMovieGenres(name: any): Observable<any>{
+    const token = localStorage.getItem('token');
+    return this.http
+      .get(apiUrl + `movies/${name}/Genres/`, {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + token,
+        })
       })
-    }).pipe(
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
+      .pipe(
+        map(this.extractResponseData),
+        catchError(this.handleError)
+      );
   }
 
   //Making the api call to get User info
