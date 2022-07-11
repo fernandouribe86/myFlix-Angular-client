@@ -15,6 +15,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 // APP COMPONENTS
 import { AppComponent } from './app.component';
@@ -26,6 +29,8 @@ import { MovieViewComponent } from './movie-view/movie-view.component';
 import { GenreViewComponent } from './genre-view/genre-view.component';
 import { DirectorViewComponent } from './director-view/director-view.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
+import { MovieDescriptionComponent } from './movie-description/movie-description.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -43,7 +48,9 @@ const appRoutes: Routes = [
     MovieViewComponent,
     GenreViewComponent,
     DirectorViewComponent,
-    ProfileViewComponent
+    ProfileViewComponent,
+    MovieDescriptionComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -57,9 +64,11 @@ const appRoutes: Routes = [
     MatCardModule,
     MatFormFieldModule,
     MatSnackBarModule,
+    MatToolbarModule,
     RouterModule.forRoot(appRoutes),
     MatIconModule,
-    CommonModule
+    CommonModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

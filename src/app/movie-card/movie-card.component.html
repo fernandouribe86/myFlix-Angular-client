@@ -1,17 +1,16 @@
 <div style="display: flex;">
-  <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
-      <mat-card-header>
+  <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto; margin-top: 75px; min-width: 400px;">
+      <mat-card-header style="height: 60px">
       <mat-card-title>{{movie.Title}}</mat-card-title>
-      <mat-icon>favorite_border</mat-icon>
       </mat-card-header>
-      <img src={{movie.ImagePath}} alt= {{movie.Title}} />
+      <img src={{movie.ImagePath}} style="height: 400px" alt= {{movie.Title}} />
       <mat-card-actions>
           <button
               mat-raised-button
               color="primary"
               (click)="openGenreViewDialog(movie._id, movie.Genres)"
           >
-              Genre
+              Genres
           </button>
           <button
               mat-raised-button
@@ -20,8 +19,17 @@
           >
               Directors
         </button>
-          
+        <button
+              mat-raised-button
+              color="primary"
+              (click)="openDescriptionDialog(movie.Description)"
+          >
+              Description
+          </button>
+          <mat-icon>favorite_border</mat-icon>
       </mat-card-actions>
-      <p>Description: {{movie.Description}}</p>
   </mat-card>
+</div>
+<div style="display: flex; flex-direction: row; vertical-align: middle;">
+  <p>Scroll to view more</p> <mat-icon>arrow_right_alt</mat-icon>
 </div>

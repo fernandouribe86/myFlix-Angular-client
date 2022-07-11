@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵɵsetComponentScope } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -59,7 +59,7 @@ export class GenreViewComponent implements OnInit {
 
       // NEED HELP HERE TO EXPORT JUST THE FILTERED GENRES TO THE HTML PAGE
       
-      return this.genres;
+      return this.genres.filter(item => arr.includes(item._id));
     })
     }
 

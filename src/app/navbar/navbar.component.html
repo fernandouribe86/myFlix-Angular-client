@@ -1,0 +1,16 @@
+<div style="display: flex;">
+  <mat-toolbar style="width: 100hv; position: fixed; z-index: 1000; ">
+    
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item>Home</button>
+      <button mat-menu-item>Login</button>
+      <button mat-menu-item>Logout</button>
+      <button mat-menu-item>Register</button>
+      <button mat-menu-item>Profile</button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>myFlix</span>    
+  </mat-toolbar>
+</div>

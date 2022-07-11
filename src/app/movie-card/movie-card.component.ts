@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { GenreViewComponent } from '../genre-view/genre-view.component';
 import { DirectorViewComponent } from '../director-view/director-view.component';
+import { MovieDescriptionComponent } from '../movie-description/movie-description.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -37,6 +38,12 @@ export class MovieCardComponent implements OnInit {
       width: '500px'
     });
 
+  }
+
+  openDescriptionDialog(description: string ): void {
+    let ref = this.dialog.open(MovieDescriptionComponent);
+      ref.componentInstance.description = description;
+      console.log(description);
   }
 
   getMovies(): void {
