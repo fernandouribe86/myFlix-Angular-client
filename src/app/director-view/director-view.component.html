@@ -1,1 +1,13 @@
-<p>director-view works!</p>
+<div style="display: flex;">
+  <mat-card>
+    <mat-card-header id="directorHeader">
+      Directors
+    </mat-card-header>
+      <mat-card-content>
+          <div id="genre" style="width: 1000px; flex: 1 1 auto;" *ngFor="let filteredDirector of filteredDirectors" >
+            <p id="directorName">{{filteredDirector.Name}}</p>
+            <p id="directorDescription">{{filteredDirector.Bio}}</p>
+        </div>
+      </mat-card-content>
+  </mat-card> 
+</div>

@@ -29,15 +29,12 @@ export class MovieCardComponent implements OnInit {
       console.log(genre);
   }
 
-  openDirectorViewDialog(name: string, bio: string): void {
-    this.dialog.open(DirectorViewComponent, {
-      data: {
-        Name: name,
-        Bio: bio
-      },
-      width: '500px'
-    });
-
+  openDirectorViewDialog(id: string, director: Array<string> ): void {
+    let ref = this.dialog.open(DirectorViewComponent);
+      ref.componentInstance.movieId = id;
+      ref.componentInstance.director = director;
+      console.log(id);
+      console.log(director);
   }
 
   openDescriptionDialog(description: string ): void {

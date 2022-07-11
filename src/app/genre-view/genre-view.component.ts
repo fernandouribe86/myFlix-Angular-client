@@ -1,15 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-
-import { Router } from '@angular/router';
-import { filter, subscribeOn } from 'rxjs';
-import { MovieCardComponent } from '../movie-card/movie-card.component';
-import { Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';;
 import { Input } from '@angular/core';
-import { GenericListener } from 'mongodb';
 
 @Component({
   selector: 'app-genre-view',
@@ -27,17 +20,18 @@ export class GenreViewComponent implements OnInit {
       Name: string, 
       Description: string}
       >=[];
-  @Input() filteredGenres: 
-    Array<{
+      
+    filteredGenres: Array<{
       _id: string, 
       Name: string, 
       Description: string}
-      >=[];
+      > = [];
+  
 
   constructor(
     public fetchApiData: FetchApiDataService, 
     public dialog: MatDialog,
-    public router: Router
+    public router: Router,
     ) {}
 
   ngOnInit(): void {
@@ -51,15 +45,8 @@ export class GenreViewComponent implements OnInit {
 
       // FILTER GENRES FROM GENRE LIST
       var arr = this.genre;
-      console.log(arr);
-      var brr = this.genres;
-      console.log(brr);
-      var filteredGenres = brr.filter(item => arr.includes(item._id));
-      console.log(filteredGenres);
 
-      // NEED HELP HERE TO EXPORT JUST THE FILTERED GENRES TO THE HTML PAGE
-      
-      return this.genres.filter(item => arr.includes(item._id));
+      this.filteredGenres = this.genres.filter(item => arr.includes(item._id));
     })
     }
 

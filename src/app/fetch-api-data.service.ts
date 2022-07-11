@@ -63,9 +63,9 @@ public userLogin(userDetails: any): Observable<any>{
   }
 
   //Making the api call to get array of director(s)
-  getDirector(name: any): Observable<any>{
+  getDirector(): Observable<any>{
     const token = localStorage.getItem('token');
-    return this.http.get(apiUrl + `movies/$_id/Director`, {
+    return this.http.get(apiUrl + `directors`, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token
       })
