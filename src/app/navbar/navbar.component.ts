@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -10,10 +9,23 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   constructor(
-    public router: Router
+    public router: Router,
     ) { }
 
   ngOnInit(): void {
+  }
+
+  goToMovies(): void{
+    this.router.navigate(['movies']);
+  }
+
+  goToProfile(): void{
+    this.router.navigate(['profile'])
+  }
+
+  logout(): void{
+    localStorage.clear();
+    this.router.navigate(['welcome']);
   }
 
 }
