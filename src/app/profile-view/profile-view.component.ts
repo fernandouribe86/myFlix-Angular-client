@@ -4,6 +4,8 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { EditProfileComponent } from '../edit-profile/edit-profile.component';
+import { DeleteProfileComponent } from '../delete-profile/delete-profile.component';
 
 @Component({
   selector: 'app-profile-view',
@@ -49,6 +51,18 @@ filteredFavorites: Array<{
       console.log(arr);
       this.filteredFavorites = this.movies.filter(item => arr.includes(item._id));
       console.log(this.filteredFavorites);
+    });
+  }
+
+  openEditUserDialog(): void{
+    this.dialog.open(EditProfileComponent, {
+      maxWidth: '400px'
+    });
+  }
+
+  openDeleteProfileDialog(): void{
+    this.dialog.open(DeleteProfileComponent, {
+      maxWidth: '400px'
     });
   }
 
