@@ -103,17 +103,21 @@ public userLogin(userDetails: any): Observable<any>{
   }
 
   //Making the api call to get User info
-  getUser(): Observable<any>{
+  getUser(): Observable<any> {
+    // Get Authorization token stored in local storage
     const token = localStorage.getItem('token');
+    // Get Username stored in local storage
     const username = localStorage.getItem('user');
-    return this.http.get(apiUrl + `users/${username}`, {
-      headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token
+    return this.http
+      .get(apiUrl + `users/${username}`, {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + token,
+        })
       })
-    }).pipe(
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
+      .pipe(
+        map(this.extractResponseData),
+        catchError(this.handleError)
+      );
   }
 
   //Making the api call to get list of Favorite movies

@@ -20,7 +20,7 @@ export class GenreViewComponent implements OnInit {
       Name: string, 
       Description: string}
       >=[];
-      
+
     filteredGenres: Array<{
       _id: string, 
       Name: string, 
@@ -45,7 +45,6 @@ export class GenreViewComponent implements OnInit {
 
       // FILTER GENRES FROM GENRE LIST
       var arr = this.genre;
-
       this.filteredGenres = this.genres.filter(item => arr.includes(item._id));
     })
     }

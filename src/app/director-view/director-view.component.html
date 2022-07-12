@@ -6,6 +6,7 @@
       <mat-card-content>
           <div id="genre" style="width: 1000px; flex: 1 1 auto;" *ngFor="let filteredDirector of filteredDirectors" >
             <p id="directorName">{{filteredDirector.Name}}</p>
+            <p  id="birthDeath">{{filteredDirector.Birth}} - {{filteredDirector.Death}}</p>
             <p id="directorDescription">{{filteredDirector.Bio}}</p>
         </div>
       </mat-card-content>

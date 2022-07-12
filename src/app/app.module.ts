@@ -31,6 +31,8 @@ import { DirectorViewComponent } from './director-view/director-view.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { MovieDescriptionComponent } from './movie-description/movie-description.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { DeleteProfileComponent } from './delete-profile/delete-profile.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -51,7 +53,9 @@ const appRoutes: Routes = [
     DirectorViewComponent,
     ProfileViewComponent,
     MovieDescriptionComponent,
-    NavbarComponent
+    NavbarComponent,
+    EditProfileComponent,
+    DeleteProfileComponent
   ],
   imports: [
     BrowserModule,
