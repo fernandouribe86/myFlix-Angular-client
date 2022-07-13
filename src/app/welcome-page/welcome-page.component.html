@@ -1,21 +1,28 @@
 <div class="main-page">
-  <h1>
-    Welcome to myFlix!
-  </h1>
-  <button
-    mat-raised-button
-    (click)="openUserRegistrationDialog()"
-    style="margin-right: 10px;"
-    color="primary"
-  >
-    Sign Up
-  </button>
-  <button
-    mat-raised-button
-    color="primary"
-    (click)="openUserLoginDialog()"
-    style="margin-right: 10px;"
-  >
-    Login
-  </button>
+  <div id="header">
+    <img src="../../assets/myflix-ng-logo.png" alt="myFlixLogo" id="headerLogo">
+  </div>
+  <mat-card id="welcomeMat">
+    <h1 id="welcome">
+      Welcome to myFlix!
+    </h1>
+    <mat-card-actions id="welcomeButtons">
+      <button
+        mat-raised-button
+        (click)="openUserRegistrationDialog()"
+        color="accent"
+        id="registerButton"
+      >
+        Sign Up
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="openUserLoginDialog()"
+        id="loginButton"
+      >
+        Login
+      </button>
+  </mat-card-actions>
+  </mat-card>
 </div>

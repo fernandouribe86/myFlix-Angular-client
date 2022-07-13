@@ -29,7 +29,7 @@
       <button
         mat-raised-button
         color="primary"
-        (click)="openEditUserDialog()"
+        (click)="openEditProfileDialog(user.Username, user.Email)"
           >
         Edit Profile
           </button>
@@ -37,7 +37,7 @@
       <button
         mat-raised-button
         color="accent"
-        (click)="openDeleteProfileDialog()">Delete Profile</button>
+        (click)="openDeleteProfileDialog(user.Username)">Delete Profile</button>
     </mat-card-actions>
   </mat-card>
 </div>

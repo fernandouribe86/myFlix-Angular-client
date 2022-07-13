@@ -37,3 +37,34 @@ $myFlix-Angular-client-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+  font-family: 'Druk';
+  src: url(Druk-Wide-Bold.ttf);
+}
+
+
+@font-face {
+  font-family: 'druk-wide-medium-regular';
+  src: url(Druk-Wide-Medium-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'druk-super-cy-gr-web';
+  src: url(DrukCond-Super-Cy-Gr-Web.ttf);
+}
+
+@font-face {
+  font-family: 'druk-superitalic-web';
+  src: url(DrukText-SuperItalic-Web.ttf);
+}
+
+@font-face {
+  font-family: 'druk-wide-heavy';
+  src: url(DrukWide-Heavy.ttf);
+}
+
+h1{
+  font-family: 'Druk', Arial, Helvetica, sans-serif;
+}
+

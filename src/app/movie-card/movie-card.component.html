@@ -27,7 +27,23 @@
           >
               Description
           </button>
-          <mat-icon>favorite_border</mat-icon>
+          <button
+          mat-button 
+            *ngIf="!isFavorite(movie._id)" 
+            (click)="addToFavorites(movie._id)" color="primary"
+            >
+
+            <mat-icon color="primary">favorite_border</mat-icon></button>
+
+            <button 
+            mat-button 
+            *ngIf="isFavorite(movie._id)" 
+            (click)="removeFromFavorites(movie._id)" color="primary"
+            >
+
+                <mat-icon>favorite</mat-icon>
+
+            </button>
       </mat-card-actions>
   </mat-card>
 </div>

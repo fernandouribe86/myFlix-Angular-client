@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FetchApiDataService } from '../fetch-api-data.service';
+
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-delete-profile',
@@ -6,10 +12,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./delete-profile.component.scss']
 })
 export class DeleteProfileComponent implements OnInit {
+  @Input() user: any = {};
 
-  constructor() { }
+  constructor(
+    public fetchApiData: FetchApiDataService,
+    public dialog: MatDialog,
+    public dialogRef: DialogRef,
+    public router: Router,
+    public snackBar: MatSnackBar
+  ) { }
 
   ngOnInit(): void {
   }
 
+  cancel(): void{
+    this.dialogRef.close(); 
+  }
+
+  deleteProfile(): void{
+    if (confirm('Are you super sure?')) {
+      this.router.navigate(['welcome']).then(() => {
+        this.snackBar.open('You have successfully deleted your account!', 'OK', {
+          duration: 2000
+        });
+      this.dialogRef.close();
+      })
+      this.fetchApiData.deleteUser().subscribe((result) => {
+        console.log(result);
+        localStorage.clear();
+      });
+    }
+  }
 }

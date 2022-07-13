@@ -1,0 +1,102 @@
+.main-page{
+  display: flex;
+  flex-direction: column;
+  background-color: #1d1d1d;
+  height: 100vh;
+  align-items: center;
+}
+
+#header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#headerLogo{
+  height: 20vh;
+  width: 80%;
+  background-color: #1d1d1d;
+  margin: 0;
+}
+
+#welcomeMat{
+width: 60%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+@font-face {
+  font-family: 'Druk';
+  src: url(../../Druk-Wide-Bold.ttf);
+}
+
+
+@font-face {
+  font-family: 'druk-wide-medium-regular';
+  src: url(../../Druk-Wide-Medium-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'druk-super-cy-gr-web';
+  src: url(../../DrukCond-Super-Cy-Gr-Web.ttf);
+}
+
+@font-face {
+  font-family: 'druk-superitalic-web';
+  src: url(../../DrukText-SuperItalic-Web.ttf);
+}
+
+@font-face {
+  font-family: 'druk-wide-heavy';
+  src: url(../../DrukWide-Heavy.ttf);
+}
+
+@font-face {
+  font-family: 'akzidenz-grotesk-black';
+  src: url(../../Akzidenz-grotesk-black.ttf);
+}
+
+
+@font-face {
+  font-family: 'akzidenz-grotesk-bold';
+  src: url(../../Akzidenz-grotesk-bold.ttf);
+}
+
+@font-face {
+  font-family: 'akzidenz-grotesk-light';
+  src: url(../../Akzidenz-grotesk-light.ttf);
+}
+
+@font-face {
+  font-family: 'akzidenz-grotesk-roman';
+  src: url(../../Akzidenz-grotesk-roman.ttf);
+}
+
+
+#welcome{
+  font-family: 'Druk', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  text-align: center;
+}
+
+#welcomeButtons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#registerButton{
+width: 60%;
+margin-bottom: 25px;
+font-family: 'akzidenz-grotesk-medium', Arial, Helvetica, sans-serif;
+}
+
+#loginButton{
+  margin-bottom: 25px;
+  width: 60%;
+  font-family: 'akzidenz-grotesk-medium', Arial, Helvetica, sans-serif;
+}

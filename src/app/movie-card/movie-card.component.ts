@@ -14,11 +14,17 @@ import { MovieDescriptionComponent } from '../movie-description/movie-descriptio
 })
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
+  user: any = {};
+  filteredFavorites: Array<{
+    _id: string,
+    Title: string,
+  }> = [];
 
   constructor(public fetchApiData: FetchApiDataService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getMovies();
+    this.getFavoriteMovies();
   }
 
   openGenreViewDialog(id: string, genre: Array<string> ): void {
@@ -41,6 +47,39 @@ export class MovieCardComponent implements OnInit {
     let ref = this.dialog.open(MovieDescriptionComponent);
       ref.componentInstance.description = description;
       console.log(description);
+  }
+
+  getFavoriteMovies(): void{
+    this.fetchApiData.getUser().subscribe((resp: any) => {
+      this.user = resp;
+      console.log(this.user);
+
+      //FILTER FAVORITES FROM MOVIES LIST
+      var arr = this.user.Favorites;
+      console.log(arr);
+      this.filteredFavorites = this.movies.filter(item => arr.includes(item._id));
+      console.log(this.filteredFavorites);
+    });
+  }
+
+  isFavorite(_id: any): boolean{
+    return this.filteredFavorites.includes(_id);
+  }
+
+  addToFavorites(_id: any): void{
+    console.log(_id);
+    this.fetchApiData.addFavoriteMovie(_id).subscribe((result) => {
+      console.log(result);
+      this.ngOnInit();
+    })
+  }
+
+  removeFromFavorites(_id: any): void{
+    console.log(_id);
+    this.fetchApiData.removeFavoriteMovie(_id).subscribe((result) => {
+      console.log(result);
+      this.ngOnInit();
+    })
   }
 
   getMovies(): void {

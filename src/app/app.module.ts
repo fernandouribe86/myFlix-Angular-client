@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
+import { MatInput } from '@angular/material/input';
 
 
 // APP COMPONENTS
@@ -74,6 +75,7 @@ const appRoutes: Routes = [
     MatIconModule,
     CommonModule,
     MatMenuModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

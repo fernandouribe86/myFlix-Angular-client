@@ -1,1 +1,35 @@
-<p>edit-profile works!</p>
+<mat-card style="display: flex; flex-direction: column;">
+  <mat-card-header>Edit Profile</mat-card-header>
+  <mat-card-actions>
+    <form>
+      <mat-form-field>
+        <input 
+        matInput [(ngModel)]="user.username" placeholder="Username" type="text" name="Username">
+      </mat-form-field>
+      <mat-form-field>
+        <input 
+        matInput
+        [(ngModel)]="user.password" placeholder="Password" type="password" name="Password"
+        >
+      </mat-form-field>
+      <p id="passwordWarning" style="font-size: 10px;">Note: A new password is required to update email/username</p>
+      <mat-form-field>
+        <input 
+        matInput [(ngModel)]="user.email" placeholder="Email" type="email" name="Email">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="user.birthday" placeholder="Birthday" type="date" name="Birthday">
+    </mat-form-field>
+      <div>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="editUser()"
+          >
+          Update
+        </button>
+      </div>
+    </form>
+  </mat-card-actions>
+</mat-card>
+

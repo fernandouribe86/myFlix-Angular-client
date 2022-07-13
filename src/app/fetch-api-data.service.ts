@@ -135,7 +135,7 @@ public userLogin(userDetails: any): Observable<any>{
   }
 
   //Making the api call to add a movie to a user's list of favorite movies
-  addFavoriteMovie(movieID: string): Observable<any>{
+  addFavoriteMovie(_id: string): Observable<any>{
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
     return this.http.post(apiUrl + `users/${username}/Favorites`, {
@@ -149,10 +149,10 @@ public userLogin(userDetails: any): Observable<any>{
     }
 
   //Making the api call to remove a movie to a user's list of favorite movies
-  removeFavoriteMovie(movieID: string): Observable<any> {
+  removeFavoriteMovie(_id: string): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
-    return this.http.delete(apiUrl + `users/${username}/movies/${movieID}`, {
+    return this.http.delete(apiUrl + `users/${username}/Favorites/${_id}`, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token
       })

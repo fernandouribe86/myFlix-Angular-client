@@ -1,1 +1,17 @@
-<p>delete-profile works!</p>
+<mat-card>
+  <mat-card-header>Delete Profile</mat-card-header>
+  <mat-card-content>
+    <p>Are you sure you want to delete your profile?</p>
+    <p style="font-weight: 900">This cannot be undone.</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button 
+    mat-raised-button
+    color="primary"
+    (click)="cancel()">Cancel</button>
+    <button 
+    mat-raised-button
+    color="accent"
+    (click)="deleteProfile()">Yes, I am sure</button>
+  </mat-card-actions>
+</mat-card>

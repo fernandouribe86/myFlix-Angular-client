@@ -54,16 +54,22 @@ filteredFavorites: Array<{
     });
   }
 
-  openEditUserDialog(): void{
-    this.dialog.open(EditProfileComponent, {
+  openEditProfileDialog(Username: string, Email: string): void{
+    let ref = this.dialog.open(EditProfileComponent, {
       maxWidth: '400px'
     });
+    ref.componentInstance.user.username = Username;
+    ref.componentInstance.user.email = Email;
+    console.log(Username);
+    console.log(Email);
   }
 
-  openDeleteProfileDialog(): void{
-    this.dialog.open(DeleteProfileComponent, {
+  openDeleteProfileDialog(Username: string): void{
+    let ref = this.dialog.open(DeleteProfileComponent, {
       maxWidth: '400px'
     });
+    ref.componentInstance.user.username = Username;
+    console.log(Username);
   }
 
 }
