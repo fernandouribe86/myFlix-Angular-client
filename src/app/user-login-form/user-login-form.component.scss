@@ -1,0 +1,28 @@
+#loginMat{
+  width: 40vw;
+  max-width: 280px;
+}
+
+#loginHeader{
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#loginTitle{
+  font-family: 'Druk', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  text-align: center;
+  margin: 0;
+}
+
+#loginForm{
+display: flex;
+flex-direction: column;
+}
+
+#completeLogin{
+  margin-bottom: 25px;
+  width: 60%;
+  font-family: 'akzidenz-grotesk-roman', Arial, Helvetica, sans-serif;
+}

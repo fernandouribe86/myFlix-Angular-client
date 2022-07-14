@@ -1,7 +1,9 @@
-<mat-card style="display: flex; flex-direction: column;">
-  <mat-card-header>Edit Profile</mat-card-header>
+<mat-card id="editMat" style="display: flex; flex-direction: column;">
+  <div id="editHeader">
+    <h1 id="editTitle">Edit Profile</h1>
+  </div>
   <mat-card-actions>
-    <form>
+    <form id="editForm">
       <mat-form-field>
         <input 
         matInput [(ngModel)]="user.username" placeholder="Username" type="text" name="Username">
@@ -9,6 +11,7 @@
       <mat-form-field>
         <input 
         matInput
+        required
         [(ngModel)]="user.password" placeholder="Password" type="password" name="Password"
         >
       </mat-form-field>
@@ -22,6 +25,7 @@
     </mat-form-field>
       <div>
         <button
+          id="completeEdit"
           mat-raised-button
           color="primary"
           (click)="editUser()"

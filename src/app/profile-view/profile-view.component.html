@@ -1,32 +1,35 @@
 <app-navbar></app-navbar>
-<div style="margin-top: 75px; width: 80%">
-  <mat-card>
+<div id="profileContainer">
+  <mat-card id="profile">
     <mat-card-content>
-      <mat-card-header>
+      <h1 class="profileHeader">
         Profile
-      </mat-card-header>
-      <mat-card-subtitle>myInfo</mat-card-subtitle>
-      <p>Username: {{user.Username}}</p>
-      <p>Email: {{user.Email}}
+      </h1>
+      <h2 class="subtitle">myInfo</h2>
+      <p class="formItem"><span class="formName"  style="margin-right: 25px;">Username: </span>{{user.Username}}</p>
+      <p class="formItem"> <span class="formName" style="margin-right: 84px;">Email: </span>{{user.Email}}
       </p>
-      <p>Birthday: {{user.Birthday}}</p>
-      <mat-card-subtitle>myFavorites</mat-card-subtitle>
+      <p class="formItem"><span class="formName" style="margin-right: 41px;">Birthday: </span><span>{{user.Birthday}}</span></p>
+      <h2 class="subtitle">myFavorites</h2>
       <button 
         mat-raised-button
         color="primary"
+        class="favoriteMovie"
         *ngFor="let filteredFavorite of filteredFavorites;" 
         style="height: 40px; padding-left: 10px; padding-right: 10px; width: 100px;"
+        (click)="favClick()"
         >
         {{filteredFavorite.Title}}
       </button>
   </mat-card-content>
   </mat-card>
-  <mat-card>
-    <mat-card-header>
+  <mat-card id="updateProfileContainer">
+    <h1 class="profileHeader">
       Update Profile
-    </mat-card-header>
-    <mat-card-actions>
+    </h1>
+    <mat-card-actions id="updateProfileActions">
       <button
+      class="updateButton"
         mat-raised-button
         color="primary"
         (click)="openEditProfileDialog(user.Username, user.Email)"
@@ -35,6 +38,7 @@
           </button>
 
       <button
+      class="updateButton"
         mat-raised-button
         color="accent"
         (click)="openDeleteProfileDialog(user.Username)">Delete Profile</button>

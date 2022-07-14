@@ -59,11 +59,12 @@ export class MovieCardComponent implements OnInit {
       console.log(arr);
       this.filteredFavorites = this.movies.filter(item => arr.includes(item._id));
       console.log(this.filteredFavorites);
+      console.log(this.user.Favorites);
     });
   }
 
   isFavorite(_id: any): boolean{
-    return this.filteredFavorites.includes(_id);
+    return this.user.Favorites.includes(_id);
   }
 
   addToFavorites(_id: any): void{

@@ -1,10 +1,10 @@
 <div style="display: flex;">
-  <mat-card>
-    <mat-card-header id="directorHeader">
-      Directors
-    </mat-card-header>
+  <mat-card id="directorMat">
+    <div id="directorHeader">
+      <h1 id="directorTitle">Directors</h1>
+    </div>
       <mat-card-content>
-          <div id="genre" style="width: 1000px; flex: 1 1 auto;" *ngFor="let filteredDirector of filteredDirectors" >
+          <div id="director" style="flex: 1 1 auto;" *ngFor="let filteredDirector of filteredDirectors" >
             <p id="directorName">{{filteredDirector.Name}}</p>
             <p  id="birthDeath">{{filteredDirector.Birth}} - {{filteredDirector.Death}}</p>
             <p id="directorDescription">{{filteredDirector.Bio}}</p>

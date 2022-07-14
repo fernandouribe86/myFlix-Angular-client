@@ -1,0 +1,41 @@
+#deleteMat{
+  width: 40vw;
+  max-width: 280px;
+}
+
+#deleteHeader{
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#deleteTitle{
+  font-family: 'Druk', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  text-align: center;
+  margin: 0;
+  color: rgb(243, 61, 123)
+}
+
+#deleteActions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0
+}
+
+.deletePageButtons{
+  margin-bottom: 25px;
+  width: 60%;
+  font-family: 'akzidenz-grotesk-roman', Arial, Helvetica, sans-serif;
+}
+
+.warning{
+  font-family: 'akzidenz-grotesk-roman', Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.doubleWarning{
+  font-family: 'akzidenz-grotesk-bold', Arial, Helvetica, sans-serif;
+}

@@ -1,15 +1,19 @@
-<mat-card>
-  <mat-card-header>Delete Profile</mat-card-header>
+<mat-card id="deleteMat">
+  <div id="deleteHeader">
+    <h1 id="deleteTitle">Delete Profile</h1>
+  </div>
   <mat-card-content>
-    <p>Are you sure you want to delete your profile?</p>
-    <p style="font-weight: 900">This cannot be undone.</p>
+    <p class="warning">Are you sure you want to delete your profile?</p>
+    <p class="warning doubleWarning">This cannot be undone.</p>
   </mat-card-content>
-  <mat-card-actions>
+  <mat-card-actions id="deleteActions">
     <button 
+    class="deletePageButtons"
     mat-raised-button
     color="primary"
     (click)="cancel()">Cancel</button>
     <button 
+    class="deletePageButtons"
     mat-raised-button
     color="accent"
     (click)="deleteProfile()">Yes, I am sure</button>

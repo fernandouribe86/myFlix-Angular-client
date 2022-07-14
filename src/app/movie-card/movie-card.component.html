@@ -1,52 +1,71 @@
-<app-navbar></app-navbar>
-<div style="display: flex;">
-  <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto; margin-top: 75px; min-width: 400px;">
-      <mat-card-header style="height: 60px">
-      <mat-card-title>{{movie.Title}}</mat-card-title>
-      </mat-card-header>
-      <img src={{movie.ImagePath}} style="height: 400px" alt= {{movie.Title}} />
-      <mat-card-actions>
-          <button
-              mat-raised-button
-              color="primary"
-              (click)="openGenreViewDialog(movie._id, movie.Genres)"
-          >
-              Genres
-          </button>
-          <button
-              mat-raised-button
-              color="accent"
-              (click)="openDirectorViewDialog(movie._id, movie.Director)"
-          >
-              Directors
-        </button>
-        <button
-              mat-raised-button
-              color="primary"
-              (click)="openDescriptionDialog(movie.Description)"
-          >
-              Description
-          </button>
-          <button
-          mat-button 
-            *ngIf="!isFavorite(movie._id)" 
-            (click)="addToFavorites(movie._id)" color="primary"
-            >
+<div id="mainContainer" >
+    <app-navbar></app-navbar>
+    <div style="display: flex; flex-direction: column;">
+        <div style="display: flex;" id="movieViewContainer">
+            <mat-card 
+                id="{{movie._id}}"
+                class="movieCard"
+                *ngFor="let movie of movies;" 
+                >
+                <div style="width: 100%;" id="titleContainer">
+                    <h1 id="movieTitle">{{movie.Title}}</h1>
+                </div>
+                <div id="poster" style="background-image: url({{movie.ImagePath}}); background-size: cover; background-position: center;">
+                    <button
+                    class="heartButton"
+                    mat-button 
+                        *ngIf="!isFavorite(movie._id)" 
+                        (click)="addToFavorites(movie._id)" color="accent"
+                        >
 
-            <mat-icon color="primary">favorite_border</mat-icon></button>
+                        <mat-icon color="#accent" class="fav"
+                        >favorite_border</mat-icon></button>
 
-            <button 
-            mat-button 
-            *ngIf="isFavorite(movie._id)" 
-            (click)="removeFromFavorites(movie._id)" color="primary"
-            >
+                        <button 
+                        class="heartButton"
+                        mat-button 
+                        *ngIf="isFavorite(movie._id)" 
+                        (click)="removeFromFavorites(movie._id)"
+                        >
 
-                <mat-icon>favorite</mat-icon>
+                            <mat-icon color="accent" class="fav">favorite</mat-icon>
 
-            </button>
-      </mat-card-actions>
-  </mat-card>
-</div>
-<div style="display: flex; flex-direction: row; vertical-align: middle;">
-  <p>Scroll to view more</p> <mat-icon>arrow_right_alt</mat-icon>
+                        </button>
+                </div>
+                <!-- <img src={{movie.ImagePath}} style="height: 400px" alt= {{movie.Title}} /> -->
+                <mat-card-actions id="movieCardButtons">
+                    <button
+                        class="movieButton"
+                        mat-raised-button
+                        color="primary"
+                        (click)="openGenreViewDialog(movie._id, movie.Genres)"
+                    >
+                        Genres
+                    </button>
+                    <button
+                        class="movieButton"
+                        mat-raised-button
+                        color="accent"
+                        (click)="openDirectorViewDialog(movie._id, movie.Director)"
+                    >
+                        Directors
+                    </button>
+                    <button
+                    class="movieButton"
+                        mat-raised-button
+                        color="primary"
+                        (click)="openDescriptionDialog(movie.Description)"
+                        id="description"
+                    >
+                    Description
+                    </button>
+                </mat-card-actions>
+                
+            </mat-card>
+            </div>
+        <div style="display: flex; flex-direction: row; margin-top: 15px; margin-left: 15px;">            
+            <p>Scroll to view more</p>  
+            <mat-icon>arrow_right_alt</mat-icon>
+         </div>
+        </div>
 </div>

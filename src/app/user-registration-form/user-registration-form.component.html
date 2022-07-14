@@ -1,9 +1,9 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Sign Up!</mat-card-title>
-  </mat-card-header>
+<mat-card id="registerMat">
+  <div id="registerHeader">
+    <h1 id="signUpTitle">Register</h1>
+  </div>
   <mat-card-content>
-    <form>
+    <form id="registerForm">
       <mat-form-field>
         <input
           matInput
@@ -47,9 +47,10 @@
   </mat-card-content>
   <mat-card-actions>
       <button
+      id="completeRegistration"
         mat-raised-button
         (click)="registerUser()"
-        color="primary"
+        color="accent"
       >
         Register
       </button>

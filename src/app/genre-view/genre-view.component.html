@@ -1,10 +1,10 @@
 <div style="display: flex;">
-  <mat-card>
-    <mat-card-header id="genreHeader">
-      Genres
-    </mat-card-header>
+  <mat-card id="genreMat">
+    <div id="genreHeader">
+      <h1 id="genresTitle">Genres</h1>
+    </div>
       <mat-card-content>
-          <div id="genre" style="width: 1000px; flex: 1 1 auto;" *ngFor="let filteredGenre of filteredGenres" >
+          <div id="genre" style="flex: 1 1 auto;" *ngFor="let filteredGenre of filteredGenres" >
             <p id="genreName">{{filteredGenre.Name}}</p>
             <p id="genreDescription">{{filteredGenre.Description}}</p>
         </div>

@@ -1,0 +1,33 @@
+#genreHeader{
+  width: 100%;
+}
+
+#genreMat{
+  max-width: 500px;
+}
+
+#genresTitle{
+  font-family: 'Druk', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  text-align: left;
+  margin: 0;
+  color: rgb(63,81,181);
+  margin-bottom: 25px;
+}
+
+#genreName{
+  font-family: 'akzidenz-grotesk-black', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+
+#genreDescription{
+  font-family: 'akzidenz-grotesk-roman', Arial, Helvetica, sans-serif;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+p{
+  font-family: 'akzidenz-grotesk-roman', Arial, Helvetica, sans-serif;
+}

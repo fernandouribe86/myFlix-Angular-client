@@ -1,0 +1,76 @@
+#profileContainer{
+  padding-top: 150px;
+  background-color: #383838;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profile{
+  width: 60%;
+  background-color: #f1e9e9;
+  margin-bottom: 25px;
+}
+
+.profileHeader{
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  font-family: 'Druk', Arial, Helvetica, sans-serif;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.subtitle{
+  padding-top: 10px;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+  font-family: 'Druk', Arial, Helvetica, sans-serif;
+  letter-spacing: .05em;
+  padding-bottom: 15px;
+  color: rgb(210, 26, 115)
+}
+
+.formItem{
+  font-family: 'akzidenz-grotesk-light', Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.formName{
+  font-family: 'akzidenz-grotesk-black', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+
+.favoriteMovie{
+  margin-right: 10px;
+  font-family: 'akzidenz-grotesk-roman', Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+#updateProfileContainer{
+  width: 40%;
+  min-width: 250px;
+  background-color: #f1e9e9;
+}
+
+#updateProfileActions{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  justify-content: space-around;
+}
+
+.updateButton{
+  margin-right: 10px;
+  font-family: 'akzidenz-grotesk-roman', Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  width: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

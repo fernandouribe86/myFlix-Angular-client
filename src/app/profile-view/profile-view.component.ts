@@ -14,7 +14,7 @@ import { DeleteProfileComponent } from '../delete-profile/delete-profile.compone
 })
 export class ProfileViewComponent implements OnInit {
   
-user: any = {};
+user: any = { _id: '', Username: '', Password: '', Favorites: [], Birthday: Date, Email: ''};
 movies: any[] = [];
 filteredFavorites: Array<{
   _id: string,
@@ -70,6 +70,10 @@ filteredFavorites: Array<{
     });
     ref.componentInstance.user.username = Username;
     console.log(Username);
+  }
+
+  favClick(): void{
+    this.router.navigate(['movies/#{thismovie._id}']);
   }
 
 }
