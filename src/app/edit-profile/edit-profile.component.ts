@@ -27,7 +27,7 @@ export class EditProfileComponent implements OnInit {
 
   editUser(): void{
     console.log(this.user);
-    this.fetchApiData.editUser(localStorage.getItem("username")).subscribe((result) => {
+    this.fetchApiData.editUser(this.user).subscribe((result) => {
       this.dialogRef.close();
       console.log(result);
       this.snackBar.open('Successfully updated profile!', 'OK', {

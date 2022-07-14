@@ -9,15 +9,17 @@
       <p class="formItem"><span class="formName"  style="margin-right: 25px;">Username: </span>{{user.Username}}</p>
       <p class="formItem"> <span class="formName" style="margin-right: 84px;">Email: </span>{{user.Email}}
       </p>
-      <p class="formItem"><span class="formName" style="margin-right: 41px;">Birthday: </span><span>{{user.Birthday}}</span></p>
+      <p class="formItem"><span class="formName" style="margin-right: 41px;">Birthday: </span>
+        <span>{{user.Birthday}}</span>
+      </p>
       <h2 class="subtitle">myFavorites</h2>
       <button 
         mat-raised-button
         color="primary"
         class="favoriteMovie"
         *ngFor="let filteredFavorite of filteredFavorites;" 
-        style="height: 40px; padding-left: 10px; padding-right: 10px; width: 100px;"
-        (click)="favClick()"
+        style="height: 40px; padding-left: 10px; padding-right: 10px;"
+        (click)="favClick(filteredFavorite._id)"
         >
         {{filteredFavorite.Title}}
       </button>

@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 import { DeleteProfileComponent } from '../delete-profile/delete-profile.component';
+import { getLocaleDateFormat } from '@angular/common';
 
 @Component({
   selector: 'app-profile-view',
@@ -14,7 +15,7 @@ import { DeleteProfileComponent } from '../delete-profile/delete-profile.compone
 })
 export class ProfileViewComponent implements OnInit {
   
-user: any = { _id: '', Username: '', Password: '', Favorites: [], Birthday: Date, Email: ''};
+user: any = { _id: '', Username: '', Password: '', Favorites: [], Birthday: '', Email: ''};
 movies: any[] = [];
 filteredFavorites: Array<{
   _id: string,
@@ -31,6 +32,7 @@ filteredFavorites: Array<{
   ngOnInit(): void {
     this.getUser();
     this.getMovies();
+    this.fixBirthday();
   }
 
   getUser(): void {
@@ -54,6 +56,18 @@ filteredFavorites: Array<{
     });
   }
 
+  fixBirthday(): void{
+    this.fetchApiData.getUser().subscribe((resp: any) => {
+      this.user = resp;
+      console.log(this.user.Birthday);
+
+      //FIX BIRTHDAY FORMATTING
+      let birthday = new Date(this.user.Birthday).toDateString();
+      console.log(birthday);
+      this.user.Birthday = birthday;
+    })
+  }
+
   openEditProfileDialog(Username: string, Email: string): void{
     let ref = this.dialog.open(EditProfileComponent, {
       maxWidth: '400px'
@@ -72,8 +86,9 @@ filteredFavorites: Array<{
     console.log(Username);
   }
 
-  favClick(): void{
-    this.router.navigate(['movies/#{thismovie._id}']);
+  favClick(_id: any): void{
+    let url: string = `movies#`+_id;
+    this.router.navigateByUrl(url);
   }
 
 }
