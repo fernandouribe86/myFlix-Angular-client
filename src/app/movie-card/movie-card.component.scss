@@ -1,5 +1,6 @@
 #mainContainer{
 height: 100vh;
+margin-bottom: -100px;
 }
 #movieViewContainer{
   background-color: #383838;
@@ -78,3 +79,9 @@ height: 100vh;
   font-size: 15px;
 }
 
+#scroll{
+  color: white;
+  font-family: 'akzidenz-grotesk-light', Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  margin-left: 5px;
+}

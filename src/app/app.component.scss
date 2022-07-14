@@ -44,3 +44,18 @@
   font-family: 'akzidenz-grotesk-roman';
   src: url(../Akzidenz-grotesk-roman.ttf);
 }
+
+#footerContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 13px;
+  font-family: 'akzidenz-grotesk-light', Arial, Helvetica, sans-serif;
+  height: 100px;
+  bottom: 0;
+  background-color: #181818;
+  position: fixed;
+  width: 100%;
+}
