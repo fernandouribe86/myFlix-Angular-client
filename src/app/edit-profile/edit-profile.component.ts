@@ -27,20 +27,21 @@ export class EditProfileComponent implements OnInit {
 
   editUser(): void{
     console.log(this.user);
-    this.fetchApiData.editUser(this.user).subscribe((result) => {
+    this.fetchApiData.editUser(this.user.username).subscribe((result) => {
       this.dialogRef.close();
       console.log(result);
       this.snackBar.open('Successfully updated profile!', 'OK', {
         duration: 2000
       });
-      if (this.user.username || this.user.password) {
+      if (this.user.username !== result.username || this.user.password !== result.password) {
         localStorage.clear();
         this.router.navigate(['welcome']);
         this.snackBar.open('Please login again with your new credentials', 'OK', {
           duration: 5000
         });
-      }
+      };
+      return result;
     })
-  }
-
+    }
+  
 }
