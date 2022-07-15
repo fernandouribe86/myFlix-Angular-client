@@ -166,14 +166,14 @@ public userLogin(userDetails: any): Observable<any>{
   editUser(updateDetails: any): Observable<any>{
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
-    return this.http.put(apiUrl + `users/${username}`, updateDetails, {
-      headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token
+    console.log(updateDetails);
+    return this.http
+      .put(apiUrl + `users/${username}`, updateDetails, {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + token,
+        }),
       })
-    }).pipe(
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   //Making the api call to delete a user from the database
