@@ -41,8 +41,9 @@ export class EditProfileComponent implements OnInit {
         this.snackBar.open('Please login again with your new credentials', 'OK', {
           duration: 5000
         });
-      }
+      };
+      return result;
     })
-  }
-
+    }
+  
 }
