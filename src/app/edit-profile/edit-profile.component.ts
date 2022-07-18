@@ -23,17 +23,19 @@ export class EditProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.user.Username = localStorage.getItem("user");
   }
 
   editUser(): void{
-    console.log(this.user);
+    console.log(localStorage.getItem("user"));
+    // this.user.Username = localStorage.getItem("user");
     this.fetchApiData.editUser(this.user).subscribe((result) => {
       this.dialogRef.close();
       console.log(result);
       this.snackBar.open('Successfully updated profile!', 'OK', {
         duration: 2000
       });
-      if (this.user.username || this.user.password) {
+      if (this.user.Username || this.user.Password) {
         localStorage.clear();
         this.router.navigate(['welcome']);
         this.snackBar.open('Please login again with your new credentials', 'OK', {

@@ -6,22 +6,22 @@
     <form id="editForm">
       <mat-form-field>
         <input 
-        matInput [(ngModel)]="user.username" placeholder="Username" type="text" name="Username">
+        matInput [(ngModel)]="user.Username" placeholder="Username" type="text" name="Username">
       </mat-form-field>
       <mat-form-field>
         <input 
         matInput
         required
-        [(ngModel)]="user.password" placeholder="Password" type="password" name="Password"
+        [(ngModel)]="user.Password" placeholder="Password" type="password" name="Password"
         >
       </mat-form-field>
       <p id="passwordWarning" style="font-size: 10px;">Note: A new password is required to update email/username</p>
       <mat-form-field>
         <input 
-        matInput [(ngModel)]="user.email" placeholder="Email" type="email" name="Email">
+        matInput [(ngModel)]="user.Email" placeholder="Email" type="email" name="Email">
       </mat-form-field>
       <mat-form-field>
-        <input matInput [(ngModel)]="user.birthday" placeholder="Birthday" type="date" name="Birthday">
+        <input matInput [(ngModel)]="user.Birthday" placeholder="Birthday" type="date" name="Birthday">
     </mat-form-field>
       <div>
         <button
