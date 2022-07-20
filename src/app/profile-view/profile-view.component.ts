@@ -38,7 +38,6 @@ filteredFavorites: Array<{
   getUser(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.user = resp;
-      console.log(this.user);
       return this.user;
     })
   }
@@ -46,24 +45,19 @@ filteredFavorites: Array<{
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
-      console.log(this.movies);
 
       //FILTER FAVORITES FROM MOVIES LIST
       var arr = this.user.Favorites;
-      console.log(arr);
       this.filteredFavorites = this.movies.filter(item => arr.includes(item._id));
-      console.log(this.filteredFavorites);
     });
   }
 
   fixBirthday(): void{
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.user = resp;
-      console.log(this.user.Birthday);
 
       //FIX BIRTHDAY FORMATTING
       let birthday = new Date(this.user.Birthday).toDateString();
-      console.log(birthday);
       this.user.Birthday = birthday;
     })
   }
@@ -74,8 +68,6 @@ filteredFavorites: Array<{
     });
     ref.componentInstance.user.username = Username;
     ref.componentInstance.user.email = Email;
-    console.log(Username);
-    console.log(Email);
   }
 
   openDeleteProfileDialog(Username: string): void{
@@ -83,7 +75,6 @@ filteredFavorites: Array<{
       maxWidth: '400px'
     });
     ref.componentInstance.user.username = Username;
-    console.log(Username);
   }
 
   favClick(_id: any): void{

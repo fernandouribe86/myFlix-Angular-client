@@ -48,7 +48,6 @@ export class DirectorViewComponent implements OnInit {
       var arr = this.director;
 
       this.filteredDirectors = this.directors.filter(item => arr.includes(item._id));
-      console.log(this.filteredDirectors);
     })
     }
 }

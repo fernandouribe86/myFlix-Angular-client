@@ -11,6 +11,7 @@ import { DialogRef } from '@angular/cdk/dialog';
   templateUrl: './edit-profile.component.html',
   styleUrls: ['./edit-profile.component.scss']
 })
+
 export class EditProfileComponent implements OnInit {
   @Input() user: any = {};
 
@@ -27,11 +28,8 @@ export class EditProfileComponent implements OnInit {
   }
 
   editUser(): void{
-    console.log(localStorage.getItem("user"));
-    // this.user.Username = localStorage.getItem("user");
     this.fetchApiData.editUser(this.user).subscribe((result) => {
       this.dialogRef.close();
-      console.log(result);
       this.snackBar.open('Successfully updated profile!', 'OK', {
         duration: 2000
       });

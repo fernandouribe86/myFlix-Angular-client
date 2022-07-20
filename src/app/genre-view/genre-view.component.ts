@@ -41,8 +41,7 @@ export class GenreViewComponent implements OnInit {
   getGenres(): void {
     this.fetchApiData.getGenres().subscribe((resp: any) => {
       this.genres = resp;
-      console.log(this.genres);
-
+      
       // FILTER GENRES FROM GENRE LIST
       var arr = this.genre;
       this.filteredGenres = this.genres.filter(item => arr.includes(item._id));

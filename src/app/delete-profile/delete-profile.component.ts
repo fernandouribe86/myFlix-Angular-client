@@ -38,7 +38,6 @@ export class DeleteProfileComponent implements OnInit {
       this.dialogRef.close();
       })
       this.fetchApiData.deleteUser().subscribe((result) => {
-        console.log(result);
         localStorage.clear();
       });
     }
