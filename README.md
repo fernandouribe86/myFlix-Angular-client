@@ -41,23 +41,23 @@ Not a user yet? Feel free to create an account!
 
 ## Screenshots
 #### Welcome
-<img src="/dist/assets/myflix-angular-welcome.png">
+<img src="/src/assets/myflix-angular-welcome.png">
 
 #### Login
-<img src="/dist/assets/myflix-angular-login.png>
+<img src="/src/assets/myflix-angular-login.png>
 
 #### Movies
-<img src="dist/assets/myflix-angular-movies.png">
+<img src="src/assets/myflix-angular-movies.png">
 
 #### Details
-<img src="dist/assets/myflix-angular-genres.png">
-<img src="dist/assets/myflix-angular-directors.png">
-<img src="dist/assets/myflix-angular-description.png">
+<img src="src/assets/myflix-angular-genres.png">
+<img src="src/assets/myflix-angular-directors.png">
+<img src="src/assets/myflix-angular-description.png">
 
 ### Profile
-<img src="dist/assets/myflix-angular-profile.png">
-<img src="dist/assets/myflix-angular-edit-user.png">
-<img src="dist/assets/myflix-angular-delete-user.png">
+<img src="src/assets/myflix-angular-profile.png">
+<img src="src/assets/myflix-angular-edit-user.png">
+<img src="src/assets/myflix-angular-delete-user.png">
 
 ## Development server
 
