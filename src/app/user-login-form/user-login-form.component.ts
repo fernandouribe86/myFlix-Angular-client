@@ -12,8 +12,14 @@ import { FetchApiDataService } from '../fetch-api-data.service';
   styleUrls: ['./user-login-form.component.scss']
 })
 
+/**
+ * @module UserLoginFormComponent
+ * Handles the login of an existing user
+ */
+
 export class UserLoginFormComponent implements OnInit {
 
+  // Values will be passed through the login form
   @Input() userData = { Username: '', Password: '', Favorites: [] };
 
   constructor(
@@ -25,6 +31,10 @@ export class UserLoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+   /**
+   * @function loginUser
+   * Opens a dialog to login the existing user
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
       localStorage.setItem('token', result.token);

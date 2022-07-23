@@ -5,6 +5,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { FetchApiDataService } from '../fetch-api-data.service';
 
+/**
+ * @module UserRegistrationFormComponent
+ * Handles the registration of a new user
+ */
+
 @Component({
   selector: 'app-user-registration-form',
   templateUrl: './user-registration-form.component.html',
@@ -12,6 +17,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 })
 export class UserRegistrationFormComponent implements OnInit {
 
+  // Values will be passed through the registration form
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
 
   constructor(
@@ -22,6 +28,10 @@ export class UserRegistrationFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * @function registerUser
+   * Opens a dialog to register the new user
+   */
   registerUser(): void {
     this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
       this.dialogRef.close();

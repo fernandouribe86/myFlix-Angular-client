@@ -7,6 +7,13 @@ import { GenreViewComponent } from '../genre-view/genre-view.component';
 import { DirectorViewComponent } from '../director-view/director-view.component';
 import { MovieDescriptionComponent } from '../movie-description/movie-description.component';
 
+/**
+ * @module MovieCardComponent
+ * Handles the display of all movies on the page
+ * Displays details that can be clicked on to access details
+ * First page when logged in
+ */
+
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
@@ -20,13 +27,27 @@ export class MovieCardComponent implements OnInit {
     Title: string,
   }> = [];
 
-  constructor(public fetchApiData: FetchApiDataService, public dialog: MatDialog) { }
+  /**
+   * 
+   * @param fetchApiData pulls in data from myFlix API database
+   * @param dialog Uses Angular Material to create dialog box that appears when button is clicked
+   */
+  constructor(
+    public fetchApiData: FetchApiDataService, 
+    public dialog: MatDialog) 
+    { }
 
   ngOnInit(): void {
     this.getMovies();
     this.getFavoriteMovies();
+  
   }
-
+  /**
+   * @function openGenreViewDialog
+   * @param  {string} id
+   * @param  {Array<string>} genre
+   * Passes movie ID and genre info while opening Genre dialog 
+   */
   openGenreViewDialog(id: string, genre: Array<string> ): void {
     let ref = this.dialog.open(GenreViewComponent);
       ref.componentInstance.movieId = id;
@@ -34,7 +55,12 @@ export class MovieCardComponent implements OnInit {
       console.log(id);
       console.log(genre);
   }
-
+  /**
+   * @function openDirectorViewDialog
+   * @param  {string} id
+   * @param  {Array<string>} director
+   * Passes movie ID and director info while opening Director dialog
+   */
   openDirectorViewDialog(id: string, director: Array<string> ): void {
     let ref = this.dialog.open(DirectorViewComponent);
       ref.componentInstance.movieId = id;
@@ -42,13 +68,21 @@ export class MovieCardComponent implements OnInit {
       console.log(id);
       console.log(director);
   }
-
+  /**
+   * @function openDescriptionDialog
+   * @param  {string} description
+   * Passes movie description while opening Description dialog
+   */
   openDescriptionDialog(description: string ): void {
     let ref = this.dialog.open(MovieDescriptionComponent);
       ref.componentInstance.description = description;
       console.log(description);
   }
-
+  /**
+   * @function getFavoriteMovies
+   * Gets Favorites from user data
+   * Filters favorites from the movie list
+   */
   getFavoriteMovies(): void{
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.user = resp;
@@ -57,23 +91,42 @@ export class MovieCardComponent implements OnInit {
       this.filteredFavorites = this.movies.filter(item => arr.includes(item._id));
     });
   }
-
+  /**
+   * @function isFavorite
+   * @param  {any} _id
+   * Checks to see if movie is in user's favorites list for Heart button
+   */
   isFavorite(_id: any): boolean{
     return this.user.Favorites.includes(_id);
   }
 
+  /**
+   * @function addToFavorites
+   * @param {any}_id 
+   * Adds a movie to list of favorites upon clicking unfilled heart button
+   */
   addToFavorites(_id: any): void{
     this.fetchApiData.addFavoriteMovie(_id).subscribe((result) => {
       this.ngOnInit();
     })
   }
 
+/**
+   * @function removeFromFavorites
+   * @param {any}_id 
+   * Removes a movie to list of favorites upon clicking filled heart button
+   */
   removeFromFavorites(_id: any): void{
     this.fetchApiData.removeFavoriteMovie(_id).subscribe((result) => {
       this.ngOnInit();
     })
   }
 
+  /**
+   * @method get
+   * @function getMovies
+   * Gets list of movies to be used for mapping Favorites
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;

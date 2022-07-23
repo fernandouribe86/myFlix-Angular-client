@@ -8,6 +8,12 @@ import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 import { DeleteProfileComponent } from '../delete-profile/delete-profile.component';
 import { getLocaleDateFormat } from '@angular/common';
 
+/**
+ * @module ProfileViewComponent
+ * Handles the display and management of user data post-login
+ */
+
+
 @Component({
   selector: 'app-profile-view',
   templateUrl: './profile-view.component.html',
@@ -35,6 +41,10 @@ filteredFavorites: Array<{
     this.fixBirthday();
   }
 
+  /**
+   * @function getUser
+   * Gets user information
+   */
   getUser(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.user = resp;
@@ -42,6 +52,10 @@ filteredFavorites: Array<{
     })
   }
 
+  /**
+   * @function getMovies
+   * Gets movie data for mapping favorits
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -52,6 +66,10 @@ filteredFavorites: Array<{
     });
   }
 
+  /**
+   * @function fixBirthday
+   * Formats birthday properly
+   */
   fixBirthday(): void{
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.user = resp;
@@ -62,6 +80,12 @@ filteredFavorites: Array<{
     })
   }
 
+  /**
+   * @function openEditProfileDialog
+   * @param Username 
+   * @param Email 
+   * Opens dialog to edit profile information
+   */
   openEditProfileDialog(Username: string, Email: string): void{
     let ref = this.dialog.open(EditProfileComponent, {
       maxWidth: '400px'
@@ -70,6 +94,11 @@ filteredFavorites: Array<{
     ref.componentInstance.user.email = Email;
   }
 
+  /**
+   * @function openDeleteProfileDialog
+   * @param Username 
+   * Opens dialog to delete profile completely
+   */
   openDeleteProfileDialog(Username: string): void{
     let ref = this.dialog.open(DeleteProfileComponent, {
       maxWidth: '400px'
@@ -77,6 +106,11 @@ filteredFavorites: Array<{
     ref.componentInstance.user.username = Username;
   }
 
+  /**
+   * @function favClick
+   * @param _id 
+   * Navigates to /movies page and moves page to specific film based on _id
+   */
   favClick(_id: any): void{
     let url: string = `movies#`+_id;
     this.router.navigateByUrl(url);
