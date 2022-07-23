@@ -1,6 +1,63 @@
 # MyFlixAngularClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
+#myFlix - Angular - Achievement 6
+
+## Technologies
+### Angular
+Angular is a TypeScript-based free and open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.
+
+### Material UI Angular
+ Angular Material is a User Interface (UI) component library that developers can use in their Angular projects to speed up the development of elegant and consistent user interfaces. Angular Material offers you reusable and beautiful UI components like Cards, Inputs, Data Tables, Datepickers, and much more.
+
+### TypeDoc
+TypeDoc is an API documentation generator for TypeScript projects, similar to JsDoc or javadoc. 
+
+### External API/Mongo Database
+myFlix uses an external API created by Fernando and references a Mongo database.
+
+## User Stories
+
+- As a user, I want to be able to receive information on movies, directors, and genres so that I can learn more about movies I’ve watched or am interested in. 
+	- Create a list of movies using myFlix REST API
+	- Create a Movie-View
+	- Create a Movie-Card
+	- Create a Genre-View
+	- Create a Director-View
+
+- As a user, I want to be able to create a profile so I can save data about my favorite movies.
+	- Develop a login page
+	- Develop a register page
+	- Develop a profile page
+
+## Features
+### See Movies’ Information
+See a list of Fernando’s favorite movies, along with their descriptions, director information, and genre information. You can also add a movie to your list of favorites
+
+### View and Edit Profile
+A profile view allows you to view/edit your profile information and view your favorited movies.
+
+### Create an Account
+Not a user yet? Feel free to create an account!
+
+## Screenshots
+#### Welcome
+<img src="/dist/assets/myflix-angular-welcome.png">
+
+#### Login
+<img src="/dist/assets/myflix-angular-login.png>
+
+#### Movies
+<img src="dist/assets/myflix-angular-movies.png">
+
+#### Details
+<img src="dist/assets/myflix-angular-genres.png">
+<img src="dist/assets/myflix-angular-directors.png">
+<img src="dist/assets/myflix-angular-description.png">
+
+### Profile
+<img src="dist/assets/myflix-angular-profile.png">
+<img src="dist/assets/myflix-angular-edit-user.png">
+<img src="dist/assets/myflix-angular-delete-user.png">
 
 ## Development server
 
